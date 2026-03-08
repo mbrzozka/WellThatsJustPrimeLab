@@ -47,4 +47,52 @@ class FactorizerTest {
         Factorizer factorizer = new Factorizer();
         assertEquals(Arrays.asList(37), factorizer.primeFactors(37));
     }
+
+    @Test
+    void testPrimeNumber() {
+        Factorizer f = new Factorizer();
+        assertTrue(f.isPrime(7));
+    }
+
+    @Test
+    void testSmallestPrime() {
+        Factorizer f = new Factorizer();
+        assertTrue(f.isPrime(2));
+    }
+
+    @Test
+    void testCompositeNumber() {
+        Factorizer f = new Factorizer();
+        assertFalse(f.isPrime(12));
+    }
+
+    @Test
+    void testPerfectSquareComposite() {
+        Factorizer f = new Factorizer();
+        assertFalse(f.isPrime(25)); // 5 * 5
+    }
+
+    @Test
+    void testOneIsNotPrime() {
+        Factorizer f = new Factorizer();
+        assertFalse(f.isPrime(1));
+    }
+
+    @Test
+    void testZeroIsNotPrime() {
+        Factorizer f = new Factorizer();
+        assertFalse(f.isPrime(0));
+    }
+
+    @Test
+    void testNegativeNumberIsNotPrime() {
+        Factorizer f = new Factorizer();
+        assertFalse(f.isPrime(-5));
+    }
+
+    @Test
+    void testNullInputIsNotPrime() {
+        Factorizer f = new Factorizer();
+        assertFalse(f.isPrime(null));
+    }
 }

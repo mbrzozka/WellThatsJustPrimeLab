@@ -27,4 +27,14 @@ public class Factorizer {
         }
         return factors;
     }
+
+    public boolean isPrime(Integer n) {
+            ArrayList<Integer> list = primeFactors(n);
+            if (list.size() == 1) {
+                if (list.get(0).equals(n)) {
+                    return true;
+                }
+            }
+            return false;
+        }
 }
